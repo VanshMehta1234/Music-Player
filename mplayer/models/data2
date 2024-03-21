@@ -1,0 +1,147 @@
+package org.example.mplayer.models;
+
+
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+public class Song {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private String artist;
+    private String album;
+    @Column(name = "img")
+    private String img;
+
+    @Column(name = "lang")
+    private String lang;
+
+    @Column(name = "times_played")
+    private Integer timesPlayed;
+
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "music_name")
+    private String musicName;
+
+
+    public Song() {
+    }
+    @ManyToMany(mappedBy = "songs")
+    private Set<Playlist> playlists = new HashSet<>();
+
+    public Song(String name, String artist, String album) {
+        this.name = name;
+        this.artist = artist;
+        this.album = album;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public String getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(String album) {
+        this.album = album;
+    }
+
+    public Set<Playlist> getPlaylists() {
+        return playlists;
+    }
+
+    public void setPlaylists(Set<Playlist> playlists) {
+        this.playlists = playlists;
+    }
+
+    // toString method (optional)
+    @Override
+    public String toString() {
+        return "Song{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    public Song(Long id, String name, String artist, String album, String img, String lang, int timesPlayed, String type, String musicName, Set<Playlist> playlists) {
+        this.id = id;
+        this.name = name;
+        this.artist = artist;
+        this.album = album;
+        this.img = img;
+        this.lang = lang;
+        this.timesPlayed = timesPlayed;
+        this.type = type;
+        this.musicName = musicName;
+        this.playlists = playlists;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    public int getTimesPlayed() {
+        return timesPlayed;
+    }
+
+    public void setTimesPlayed(int timesPlayed) {
+        this.timesPlayed = timesPlayed;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getMusicName() {
+        return musicName;
+    }
+
+    public void setMusicName(String musicName) {
+        this.musicName = musicName;
+    }
+}
