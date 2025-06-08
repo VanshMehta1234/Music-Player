@@ -1,0 +1,24 @@
+const [addToPlaylistMessage, setAddToPlaylistMessage] = useState('');
+{addToPlaylistMessage && <p>{addToPlaylistMessage}</p>}
+
+const addToPlaylist = async (playlist) => {
+  try {
+      const response = await axios.post(`http://localhost:8080/api/playlists/${playlist.id}/songs`, {
+          name: name,
+          artist: author_name,
+          img: img,
+          musicName: musicName
+      });
+      console.log('Song added to playlist:', response.data);
+      setAddToPlaylistMessage(`Song added to ${playlist.name}`);
+      setTimeout(() => {
+          setAddToPlaylistMessage('');
+      }, 3000);
+  } catch (error) {
+      console.error('Error adding song to playlist:', error);
+      setAddToPlaylistMessage('Error adding song to playlist');
+      setTimeout(() => {
+          setAddToPlaylistMessage('');
+      }, 3000);
+  }
+};

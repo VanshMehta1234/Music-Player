@@ -1,0 +1,124 @@
+.footer-player {
+  position: relative;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-player .playback {
+  position: absolute;
+  height: 1vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.footer-player .playback .playback-completed {
+  height: 1vh;
+  width: 10%;
+  background-color: #1abc9c;
+}
+
+.curr-music-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.curr-music-container .curr-music-details {
+  padding-left: 20px;
+}
+
+.curr-music-container .curr-music-details p:nth-child(1) {
+  font-weight: bolder;
+}
+
+.curr-music-container .curr-music-details p:nth-child(2) {
+  color: gray;
+  font-weight: lighter;
+}
+
+.playback-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.playback-controls div {
+  padding-right: 10px;
+}
+
+.playback-widgets {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.playback-widgets .timer {
+  padding-right: 10px;
+}
+
+.playback-widgets .slider {
+  width: 100px;
+  margin: 0 20px;
+}
+
+.playback-widgets .volume {
+  padding-right: 10px;
+}
+
+.playlist-container {
+  position: relative;
+}
+.playlist-container {
+  position: relative;
+}
+
+.playlist-options {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 10px); /* Adjust the distance from the logo */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+.playlist-options-item {
+  font-size: 16px;
+  color: #333;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.playlist-options-item:hover {
+  background-color: #f5f5f5;
+}
+
+.add-to-playlist {
+  cursor: pointer;
+}
+.playlist-item-content {
+  display: flex;
+  align-items: center;
+}
+
+.playlist-item-content span {
+  margin-left: 8px; /* Adjust as needed */
+}
+
